@@ -15,16 +15,18 @@ let app = {
     },
     handleValue: function(evt){
        evt.preventDefault();
+       let speech= document.querySelector('.speech')
+       console.log(speech)
        const value= document.querySelector('.name').value;
        if (value===""){
-           alert('Ca ne fonctionne qu\'avec un nom, pardi!')
+           speech.textContent='Ca ne fonctionne qu\'avec un nom, pardi!'
        }else if(value.length===8){
-           alert('maison MAXOMUS')
+        speech.innerHTML="<img src='images/maxopus.png' alt='maxopus'/>"
        }else if (value.startsWith('L') || value.endsWith('x')){
-           alert('maison LUSTRIX') 
+        speech.innerHTML="<img src='images/lustrix.png' alt='lustrix'/>"
        }else if (value.length % 5 == 0 || value.length % 3 == 0){
-           alert('maison ANTHORVUS')
-       }else{ alert ('maison DARIOPTERA')}
+        speech.innerHTML="<img src='images/anthorvus.png' alt='anthorvus'/>"
+       }else{ speech.innerHTML="<img src='images/darioptera.png' alt='darioptera'/>"}
     },
     
 }
